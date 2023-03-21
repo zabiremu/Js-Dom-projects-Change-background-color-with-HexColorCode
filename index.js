@@ -14,6 +14,17 @@ main=()=>{
     })
     copyColor.addEventListener('click',function(){
         navigator.clipboard.writeText(colorCode.value);
+
+        var div = document.createElement('div');
+        div.className = 'show';
+        div.innerText=colorCode.value + ' copied';
+        console.log(div)
+        document.body.appendChild(div)
+
+        div.addEventListener('click',function(){
+            div.remove('.show')
+            div.className('hide')
+        })
     })
 
 }
